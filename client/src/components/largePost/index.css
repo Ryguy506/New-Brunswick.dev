@@ -1,0 +1,41 @@
+#top{
+    display: flex;
+    padding: 30px;
+}
+
+#top img{
+  width: 80px;
+    height: 80px;
+
+    border-radius: 50%;
+}
+
+
+#info {
+    display: flex;
+    flex-direction: column;
+   justify-content: center;
+   margin-left: 20px ;
+}
+
+#info p {
+   color: aliceblue;
+}
+
+#post{
+    margin-left: 20px ;
+}
+
+#commentInput{
+   resize: none;
+    min-width: 100px ; 
+    width: 50vw ;
+}
+
+#inputContainer{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-top: 50px;
+    
+}

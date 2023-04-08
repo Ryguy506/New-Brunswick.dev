@@ -1,0 +1,11 @@
+#right{
+min-height: 100vh;
+}
+
+#left{
+    height: 500px;
+}
+#parent{
+    margin-top: 80px;
+}
+
