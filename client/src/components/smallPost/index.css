@@ -1,0 +1,29 @@
+
+.image img{
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+}
+
+#smallpost{
+    background-color: #151718 ;
+    padding: 10px;
+    
+
+}
+
+#smallpost img {
+    width: 60px;
+    height: 60px;
+    
+}
+
+#posttop{
+    display: flex;
+    align-items:  center;
+    padding: 20px;
+}
+
+#postbottom{
+padding: 0 20px 20px 20px;
+}
