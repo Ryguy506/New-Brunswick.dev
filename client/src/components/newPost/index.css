@@ -1,0 +1,40 @@
+#newpostBox{
+width: 60%;
+
+}
+
+
+#newpostcontain{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position:fixed;
+    width: 100%;
+    height: 100%;
+   background-color: rgba(0,0,0,0.5);
+   z-index: 1;
+
+}
+
+#cancel{
+    height: 30px;
+    width: 30px;
+    color: red;
+    cursor: pointer;
+    transition: 0.25s;
+    margin-bottom: 10px;
+}
+
+#cancel:hover{
+    transform: scale(1.1);
+}
+
+#check{
+    height: 30px;
+    width: 30px;
+    transition: 0.25s;
+}
+
+#post:hover #check{
+    transform: scale(1.1);
+}

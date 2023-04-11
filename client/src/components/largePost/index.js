@@ -8,7 +8,7 @@ const LargePost = ({postData , commentData}) => {
 
     const {userId , title , body} = postData;
  
-    const [commentBox , setCommentBox] = useState(false);
+    // const [commentBox , setCommentBox] = useState(false);
  
 return (
     <div className='container' id=''>
@@ -26,32 +26,25 @@ return (
 <hr className='p-0 m-1'/>
 <p className='has-text-white'>{body} Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc et ex id nulla mollis rhoncus. Nam venenatis bibendum risus nec elementum. Phasellus sodales quis erat ac cursus. In et auctor risus. Quisque varius, felis quis mollis malesuada, elit diam interdum eros, in consectetur risus nisl nec eros. Nullam bibendum porta ipsum in dapibus. Donec ut urna congue, eleifend risus id, fringilla risus. </p>
 </div>
-{/* {!commentBox && (<button className='button is-rounded is-primary' id='commentButton' onClick={() => setCommentBox(!commentBox)}>Comment</button>)} 
 
-{commentBox && (
-    <div id='inputContainer'>
-    <textarea placeholder="Add a comment" className='textarea is-rounded' rows="3" id='commentInput'/>
-    <div>
-    <button className='button is-rounded is-primary' id='commentButton' onClick={() => setCommentBox(!commentBox)}>Post</button>
-    <button className='button is-rounded is-danger' id='commentButton' onClick={() => setCommentBox(!commentBox)}>Cancel</button>
-    </div>
 
-    </div> 
-)} */}
 
 <div id='inputContainer'>
     <textarea placeholder="Add a comment" className='textarea is-rounded' rows="3" id='commentInput'/>
     <button className='button is-rounded is-primary' id='commentButton'>Post</button>
     </div>
+
+
+
 <div className='columns is-multiline is-justify-content-center mt-5' >
-{commentData.length > 0 || commentData === {} ? (
+{commentData.length > 0 ? (
   commentData.map((comment) => (
     <div className='column is-10' key={comment.id}>
       <Comment commentData={comment}/>
     </div>
   ))
 ) : <p className='mt-5'>No comments</p>}
-
+{/* need to fix */}
 
 </div>
         </div>
