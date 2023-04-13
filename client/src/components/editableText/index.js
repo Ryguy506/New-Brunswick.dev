@@ -14,15 +14,18 @@ function EditableText(props) {
 
 
   const handleChange = (event) => {
-    setText(event.target.value);
+    // setText(event.target.value);
     props.updateParentState(props.fieldName, event.target.value);
   };
 
-  return editing ? (
-    <input type="text" autoFocus value={text} onBlur={() => setEditing(false)} onChange={handleChange}  id="textInput"/>
+  return editing ?  (
+    props.htmlEl === 'textarea' ?
+    <textarea autoFocus value={text} onBlur={() => setEditing(false)} onChange={handleChange} />
+    : 
+    <input type="text" autoFocus value={text} onBlur={() => setEditing(false)} onChange={handleChange} />
   ) : (
     <div id="editText">
-    <div>{text}</div>
+    <p>{text}</p>
     <RxPencil2 onClick={() => setEditing(true)} id="editBtn"/>
     </div>
   );

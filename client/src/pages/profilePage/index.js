@@ -2,6 +2,7 @@ import Profile from "../../components/profile";
 import SmallPost from "../../components/smallPost";
 import React ,{useState , useEffect} from 'react';
 import { useParams } from 'react-router-dom';
+import { Link } from 'react-router-dom';
 
 const ProfilePage = () => {
     const [profileData, setProfileData] = useState({});
@@ -28,7 +29,9 @@ const ProfilePage = () => {
         <div className="columns is-multiline">
         {postData.map(data => (
             <div className="column is-12" key={data.id}>
+                <Link to={`/myprofile/edit/${data.id}`}>
             <SmallPost postData={data} />
+            </Link>
             </div>
         ))}
         </div>
