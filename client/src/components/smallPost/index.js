@@ -1,8 +1,6 @@
 
-import React , {useState , useEffect} from "react";
 import "./index.css"
-import Comment from "../comment";
-import { Link } from "react-router-dom";
+
 
 
 const Post = ({postData}) => {
@@ -15,7 +13,7 @@ const Post = ({postData}) => {
     
 
   <div>
-   <Link to={`/post/${id}`}>
+
     <div className="card" id="smallpost">
       <div id="posttop">
         <img src="https://www.pngkey.com/png/full/73-730477_first-name-profile-image-placeholder-png.png"/>
@@ -30,7 +28,7 @@ const Post = ({postData}) => {
     </div>
     </div>
 
-    </Link>
+
     </div>
 
   

@@ -3,6 +3,7 @@ import SmallPost from '../../components/smallPost';
 import HelpNeeded from '../../components/helpneeded';
 import React, { useState, useEffect } from 'react';
 import "./index.css"
+import { Link } from 'react-router-dom';
 function Home() {
     
 
@@ -56,7 +57,9 @@ return (
  <div className="columns is-multiline" id='container'>
     {postData.map(data => ( 
       <div className='column is-12' key={data.id}>
+    <Link to={`/post/${data.id}`}>
     <SmallPost postData={data}/>
+    </Link>
     </div>
     )
      

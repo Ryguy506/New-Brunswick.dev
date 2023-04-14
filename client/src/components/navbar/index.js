@@ -50,7 +50,7 @@ useEffect(() => {
       
             
             <Link to="/myprofile">
-               <img src="https://www.pngkey.com/png/full/73-730477_first-name-profile-image-placeholder-png.png"  className={activePath === "/profile" ? "navItemActive" : null }  />
+               <img src="https://www.pngkey.com/png/full/73-730477_first-name-profile-image-placeholder-png.png"  className={activePath === "/myprofile" ? "navItemActive" : null }  />
             </Link>
             </div>
           
