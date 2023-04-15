@@ -1,0 +1,98 @@
+[{
+     "title":"Prework Study Guide Webpage",
+     "description":"This Study Guide was creaqted for boot camp students who were going through the Prework. It contains notes on HTML, CSS, JavaScript and Git.",
+     "originalPoster":"Valerii Kryshtal",
+     "collaborators":["Liibaan Halane","Daria Batiuk","Pavlo Demenshyn","Ryan Stanton"],
+     "reactions":[{
+               "reactionBody": "Cool project!" ,
+               "user":"Daria Batiuk" 
+          },
+          {
+               "reactionBody": "Amazing project!" ,
+               "user":"Liibaan Halane" 
+          }
+     ],
+     "tags":["HTML","CSS"]  
+},
+{
+     "title":"Password-Generator",
+     "description":"The goal of this project was to create a webpage that generates a randomized password using supplied index and CSS files. The page relies on Javascript to execute a number of different functions to generate a password customized to the parameters of what the user chooses.",
+     "originalPoster":"Liibaan Halane",
+     "collaborators":["Valerii Kryshtal","Daria Batiuk","Pavlo Demenshyn","Ryan Stanton"],
+     "reactions":[{
+          "reactionBody": "Yeah! Cool project!" ,
+          "user":"Pavlo Demenshyn" 
+     },
+     {
+          "reactionBody": "Wow! Amazing project!" ,
+          "user":"Ryan Stanton" 
+     }
+],
+     "tags":["HTML", "CSS", "JavaScript"]  
+},
+{
+     "title":"Quiz-about-JS",
+     "description":"The goal of this project was to use Web APIs and DOM manipulation to build a webpage that presents the user with a quiz about coding. The page utilizes javascript to present the user a dynamic experience as they maneuver through the quiz.",
+     "originalPoster":"Ryan Stanton",
+     "collaborators":["Valerii Kryshtal","Daria Batiuk","Pavlo Demenshyn","Liibaan Halane"],
+     "reactions":[{
+          "reactionBody": "Blah! Cool project!" ,
+          "user":"Daria Batiuk" 
+     },
+     {
+          "reactionBody": "Blah Blah! Amazing project!" ,
+          "user":"Valerii Kryshtal" 
+     }
+],
+     "tags":["HTML", "CSS", "JavaScript"]  
+},
+{
+     "title":"Work-Day-Scheduler",
+     "description":"Creating a simple calendar application that allows a user to save events for each hour of the day. This app will run in the browser and feature dynamically updated HTML and CSS powered by jQuery.",
+     "originalPoster":"Daria Batiuk",
+     "collaborators":["Valerii Kryshtal","Pavlo Demenshyn","Ryan Stanton","Liibaan Halane"],
+     "reactions":[{
+          "reactionBody": "Blah blah blah! Cool project!" ,
+          "user":"Valerii Kryshtal" 
+     },
+     {
+          "reactionBody": "Blah blah blah blah! Amazing project!" ,
+          "user":"Pavlo Demenshyn" 
+     }
+],
+     "tags":["HTML", "CSS", "JavaScript"]  
+},
+{
+     "title":"Weather-Dashboard",
+     "description":"A weather dashboard with search functionality to find current weather conditions and the future weather outlook for multiple cities.",
+     "originalPoster":"Pavlo Demenshyn",
+     "collaborators":["Valerii Kryshtal","Daria Batiuk","Ryan Stanton","Liibaan Halane"],
+     "reactions":[{
+          "reactionBody": "Yeah, blah! Cool project!" ,
+          "user":"Ryan Stanton" 
+     },
+     {
+          "reactionBody": "Wow, blah blah! Amazing project!" ,
+          "user":"Liibaan Halane" 
+     }
+],
+     "tags":["HTML", "CSS", "JavaScript"]  
+},
+{
+     "title":"Social-Network-API",
+     "description":"API for a social network web application where users can share their thoughts, react to friends’ thoughts, and create a friend list, using Express.js for routing, a MongoDB database, and the Mongoose ODM",
+     "originalPoster":"Ryan Stanton",
+     "collaborators":["Valerii Kryshtal","Daria Batiuk","Pavlo Demenshyn","Liibaan Halane"],
+     "reactions":[{
+          "reactionBody": "I know what u did last summer" ,
+          "user":"Alien" 
+     },
+     {
+          "reactionBody": "Wow!" ,
+          "user":"Ghost" 
+     }
+],
+     "tags":["JavaScript", "MongoDB", "Mongoose"]  
+}
+]
+
