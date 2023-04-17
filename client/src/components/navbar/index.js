@@ -1,20 +1,19 @@
 
 import React , {useState , useEffect } from "react";
-import { Link , Navigate , useLocation  } from "react-router-dom";
+import { Link , useLocation  } from "react-router-dom";
 import {AiOutlineSearch} from "react-icons/ai"
 import "./index.css"
-import NewPost from "../newPost";
 
 const Nav = () => {
 
 const [activePath, setActivePath] = useState("")
-const [newPost, setNewPost] = useState(false)
+// const [newPost, setNewPost] = useState(false)
 
 const { pathname } = useLocation()
 
 useEffect(() => {
-    setActivePath(pathname)
-    setNewPost(false)
+  setActivePath(pathname)
+  // setNewPost(false)
 }, [pathname])
 
 
@@ -40,13 +39,11 @@ useEffect(() => {
 
            </div>
            <div id='rightNav'>
-        {!newPost ? (
-          <button className='button is-rounded is-info mr-2' id='newPostButton' onClick={() => setNewPost(true)}>
+
+          <Link to="/new" className='button is-rounded is-info mr-2' id='newPostButton'>
              Create Post
-          </button>
-        ) : (
-          null
-        )}
+          </Link>
+     
       
             
             <Link to="/myprofile">
@@ -58,7 +55,7 @@ useEffect(() => {
       </nav>
 
       
-      {newPost &&  <NewPost setFalse={setNewPost}/>}
+      {/* {newPost &&  <NewPost setFalse={setNewPost}/>} */}
       </div>
     );
 };

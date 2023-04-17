@@ -1,10 +1,10 @@
-import Profile from "../../components/profile";
+import MyProfile from "../../components/myprofile";
 import SmallPost from "../../components/smallPost";
 import React ,{useState , useEffect} from 'react';
 import { useParams } from 'react-router-dom';
 import { Link } from 'react-router-dom';
 
-const ProfilePage = () => {
+const MyProfilePage = () => {
     const [profileData, setProfileData] = useState({});
     const [postData, setPostData] = useState([]);
 
@@ -23,9 +23,10 @@ const ProfilePage = () => {
         .then(data => setPostData(data))
       }, [])
 
+
     return (
         <div id='parent'>
-        <Profile profileData={profileData} />
+        <MyProfile profileData={profileData} />
         <div className="columns is-multiline">
         {postData.map(data => (
             <div className="column is-12" key={data.id}>
@@ -40,4 +41,4 @@ const ProfilePage = () => {
     )
 }
 
-export default ProfilePage;
+export default MyProfilePage;
