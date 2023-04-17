@@ -1,21 +1,23 @@
 
-import React , {useState , useEffect } from "react";
-import { Link , Navigate , useLocation  } from "react-router-dom";
+import React , {useState , useEffect ,useContext  } from "react";
+import { Link , useLocation  } from "react-router-dom";
 import {AiOutlineSearch} from "react-icons/ai"
 import "./index.css"
-import NewPost from "../newPost";
+import { UserContext } from '../../App';
 
 const Nav = () => {
 
 const [activePath, setActivePath] = useState("")
-const [newPost, setNewPost] = useState(false)
+// const [newPost, setNewPost] = useState(false)
 
 const { pathname } = useLocation()
 
 useEffect(() => {
-    setActivePath(pathname)
-    setNewPost(false)
+  setActivePath(pathname)
+  // setNewPost(false)
 }, [pathname])
+
+const userData = useContext(UserContext);
 
 
     return (
@@ -40,17 +42,15 @@ useEffect(() => {
 
            </div>
            <div id='rightNav'>
-        {!newPost ? (
-          <button className='button is-rounded is-info mr-2' id='newPostButton' onClick={() => setNewPost(true)}>
+
+          <Link to="/new" className='button is-rounded is-info mr-2' id='newPostButton'>
              Create Post
-          </button>
-        ) : (
-          null
-        )}
+          </Link>
+     
       
             
             <Link to="/myprofile">
-               <img src="https://www.pngkey.com/png/full/73-730477_first-name-profile-image-placeholder-png.png"  className={activePath === "/myprofile" ? "navItemActive" : null }  />
+               <img src={userData?._json?.picture}  className={activePath === "/myprofile" ? "navItemActive" : null }  />
             </Link>
             </div>
           
@@ -58,7 +58,7 @@ useEffect(() => {
       </nav>
 
       
-      {newPost &&  <NewPost setFalse={setNewPost}/>}
+      {/* {newPost &&  <NewPost setFalse={setNewPost}/>} */}
       </div>
     );
 };

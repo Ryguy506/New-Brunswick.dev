@@ -1,0 +1,47 @@
+[
+     {
+     "name": "Valerii Kryshtal",
+     "skills": "mongoDB",
+     "bio": "troublemaker",
+     "email": "email@email.com",
+     "website": "https://github.com/ValeriiKryshtal",
+     "usersFollowed": ["Liibaan Halane","Daria Batiuk","Pavlo Demenshyn","Ryan Stanton"],
+     "tagsFollowed": ["sex", "drugs", "rocNroll"]
+     },
+     {
+     "name": "Liibaan Halane",
+     "skills": ["mongoDB", "HTML", "CSS", "JavaScript", "API", "nodeJS", "React", "mySql", "express", "bootstrap"],
+     "bio": "blah, blah, blah",
+     "email": "email@email.com",
+     "website": "https://github.com/LiibaanHalane",
+     "usersFollowed": ["Daria Batiuk","Pavlo Demenshyn","Ryan Stanton", "Valerii Kryshtal"],
+     "tagsFollowed": ["mongoDB", "HTML", "CSS", "JavaScript", "API", "nodeJS", "React", "mySql", "express", "bootstrap"]
+     },
+     {
+     "name": "Daria Batiuk",
+     "skills": ["mongoDB", "HTML", "CSS", "JavaScript", "API", "nodeJS", "React", "mySql", "express", "bootstrap"],
+     "bio": "blah, blah, blah",
+     "email": "email@email.com",
+     "website": "https://github.com/DariaBatiuk",
+     "usersFollowed": ["Liibaan Halane","Pavlo Demenshyn","Ryan Stanton", "Valerii Kryshtal"],
+     "tagsFollowed": ["mongoDB", "HTML", "CSS", "JavaScript", "API", "nodeJS", "React", "mySql", "express", "bootstrap"]
+     },
+     {
+     "name": "Pavlo Demenshyn",
+     "skills": ["mongoDB", "HTML", "CSS", "JavaScript", "API", "nodeJS", "React", "mySql", "express", "bootstrap"],
+     "bio": "blah, blah, blah",
+     "email": "email@email.com",
+     "website": "https://github.com/Paul-Dimenshion",
+     "usersFollowed": ["Liibaan Halane","Daria Batiuk", "Ryan Stanton", "Valerii Kryshtal"],
+     "tagsFollowed": ["mongoDB", "HTML", "CSS", "JavaScript", "API", "nodeJS", "React", "mySql", "express", "bootstrap"]
+     },
+     {
+     "name": "Ryan Stanton",
+     "skills": ["mongoDB", "HTML", "CSS", "JavaScript", "API", "nodeJS", "React", "mySql", "express", "bootstrap"],
+     "bio": "blah, blah, blah",
+     "email": "email@email.com",
+     "website": "https://github.com/Ryguy506",
+     "usersFollowed": ["Liibaan Halane","Daria Batiuk","Pavlo Demenshyn", "Valerii Kryshtal"],
+     "tagsFollowed": ["mongoDB", "HTML", "CSS", "JavaScript", "API", "nodeJS", "React", "mySql", "express", "bootstrap"]
+     }
+]

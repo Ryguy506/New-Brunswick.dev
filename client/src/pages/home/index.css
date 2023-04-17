@@ -1,6 +1,6 @@
-#right{
-min-height: 100vh;
-}
+/* #right{
+/* overflow-y: scroll; */
+
 
 #left{
     height: 500px;

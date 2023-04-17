@@ -1,6 +1,6 @@
 
 import SmallPost from '../../components/smallPost';
-import HelpNeeded from '../../components/helpneeded';
+// import HelpNeeded from '../../components/helpneeded';
 import React, { useState, useEffect } from 'react';
 import "./index.css"
 import { Link } from 'react-router-dom';
@@ -42,13 +42,12 @@ return (
   <div className='columns mr-2 ml-2' id='parent'>
   <div className="column is-2" id='left'>
   <ul className="columns is-multiline">
-  <h1>Help Needed</h1>
-    {helpData.map(data => ( 
+    {/* {helpData.map(data => ( 
       <div className='column is-12' key={data.id}>
     <HelpNeeded helpData={data}/>
     </div>
     )
-    )}
+    )} */}
   </ul>
   </div>
 
