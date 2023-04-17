@@ -1,8 +1,9 @@
 
-import React , {useState , useEffect } from "react";
+import React , {useState , useEffect ,useContext  } from "react";
 import { Link , useLocation  } from "react-router-dom";
 import {AiOutlineSearch} from "react-icons/ai"
 import "./index.css"
+import { UserContext } from '../../App';
 
 const Nav = () => {
 
@@ -15,6 +16,8 @@ useEffect(() => {
   setActivePath(pathname)
   // setNewPost(false)
 }, [pathname])
+
+const userData = useContext(UserContext);
 
 
     return (
@@ -47,7 +50,7 @@ useEffect(() => {
       
             
             <Link to="/myprofile">
-               <img src="https://www.pngkey.com/png/full/73-730477_first-name-profile-image-placeholder-png.png"  className={activePath === "/myprofile" ? "navItemActive" : null }  />
+               <img src={userData?._json?.picture}  className={activePath === "/myprofile" ? "navItemActive" : null }  />
             </Link>
             </div>
           

@@ -1,10 +1,14 @@
 const express = require('express')
 const mongoose = require('mongoose')
-const app = express()
 const PORT = process.env.PORT || 3003;
+const cookieSession = require('cookie-session');
+const passportSetup = require('./passport.js');
+const passport = require('passport');
+const cors = require('cors');
+const authRoute = require('./routes/auth');
 const URL = 'mongodb+srv://valeriikryshtal:Password123@developersnb.xzdm7zp.mongodb.net/developersNB?retryWrites=true&w=majority';
 const path = require('path');
-
+const app = express()
 
 let db;
 
@@ -25,3 +29,22 @@ app.get('/', (req, res) => {
      res.sendFile(path.join(__dirname, '../client/public/index.html'));
 });
 
+app.use(cookieSession(
+     {
+     name: 'session',
+     keys: ['nbdev'],
+     maxAge: 24 * 60 * 60 * 1000 // 24 hours
+     }
+));
+
+
+app.use(passport.initialize());
+app.use(passport.session());
+
+app.use(cors({
+     origin: 'http://localhost:3000',
+     methods: 'GET,PUT,POST,DELETE',
+     credentials: true
+     }));
+     
+app.use('/auth', authRoute);
