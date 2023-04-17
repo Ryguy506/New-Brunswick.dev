@@ -4,13 +4,13 @@ import "./index.css";
 
 function EditableText(props) {
   const [editing, setEditing] = useState(false);
-  const [text, setText] = useState();
+  // const [text, setText] = useState();
 
 
-  useEffect(() => {
-    setText(props.text);
+  // // useEffect(() => {
+  // //   setText(props.text);
 
-  }, [props.text]);
+  // // }, [props.text]);
 
 
   const handleChange = (event) => {
@@ -20,12 +20,12 @@ function EditableText(props) {
 
   return editing ?  (
     props.htmlEl === 'textarea' ?
-    <textarea autoFocus value={text} onBlur={() => setEditing(false)} onChange={handleChange} />
+    <textarea className="textarea" value={props.text}  onChange={handleChange} />
     : 
-    <input type="text" autoFocus value={text} onBlur={() => setEditing(false)} onChange={handleChange} />
+    <input type="text" className="input" autoFocus value={props.text} onBlur={() => setEditing(false)} onChange={handleChange} />
   ) : (
     <div id="editText">
-    <p>{text}</p>
+    <p>{props.text}</p>
     <RxPencil2 onClick={() => setEditing(true)} id="editBtn"/>
     </div>
   );

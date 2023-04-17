@@ -1,14 +1,17 @@
 
 import React, { useState, useEffect } from 'react';
 import EditableText from '../editableText';
-import Tags from '../tags';
+import HandleArray from '../handleArray';
 import './index.css';
+import Markdown from '../markdown';
+import { GoCheck } from 'react-icons/go';
 const EditPost = ({ postData }) => {
 
     const [post, setPost] = useState({
         title: '',
         body: '',
-        tags: []
+        tags: [],
+        collaborators : []
     });
 
     const [hasChanged, setHasChanged] = useState(false)
@@ -18,15 +21,16 @@ const EditPost = ({ postData }) => {
             {
                 title: postData.title,
                 body: postData.body,
-                tags : ['tag1', 'tag2' , 'tag3']
+                tags : ['tag1', 'tag2' , 'tag3'],
+                collaborators : ['collab1', 'collab2', 'collab3']
             }
         );
     }, [postData]);
 
 
-    useEffect(() => {
-        console.log(post);
-    }, [post]);
+    // useEffect(() => {
+    //     console.log(post);
+    // }, [post]);
 
 
     function handleState(fieldName, value) {
@@ -47,14 +51,9 @@ const EditPost = ({ postData }) => {
 
 
     return (
-        <div id='btnPosition'>
-                        {hasChanged && (
-  <div>
-    <button className="button is-info" id="save" onClick={handleSave}>Save</button> 
-    <button className="button is-danger" id="cancelBtn" onClick={() => setHasChanged(false)}>Cancel</button>
-  </div>
-)}
+     
         <div className='container'>
+            <div>
         <div id='top'>
             <img src="https://www.pngkey.com/png/full/73-730477_first-name-profile-image-placeholder-png.png" alt="Placeholder image"/>
             <div id='info'>
@@ -62,16 +61,36 @@ const EditPost = ({ postData }) => {
         
                 <p className='is-size-6'>Posted on april 7</p>
             </div>
-         <Tags tagDataArr={post.tags} updateParentState={handleState} fieldName="tags"/>
+     
+         </div>
         </div>
         
         <div className="container  is-fluid" id='bottom'>
         <EditableText text={post.title} updateParentState={handleState} fieldName="title"/>
         <hr className='p-0 m-1'/>
+        
+        <div className='columns is-multiline'>
+            <div className='column is-12' >
+            <HandleArray dataArray={post.tags} updateParentState={handleState} fieldName="tags" Btn="Add Tags" />
+         </div>
+            <div className='column is-12' >
+            <HandleArray dataArray={post.collaborators} updateParentState={handleState} fieldName="collaborators" Btn="Add Collaborators" placeholder="github" />
+            </div>
+            </div>
+        <div id='textarea'>
         <EditableText text={post.body} updateParentState={handleState} fieldName="body" htmlEl="textarea"/>
         </div>
+        <div className='box'>
+        <Markdown markdown={post.body}/>
+            </div>
+            {hasChanged && (
+                <div className='has-text-right'>
+                 <button className="button is-info mt-2 is-rounded" id="post" onClick={handleSave}><GoCheck id="check"/></button>
+                 </div>)}
+
         </div>
         </div>
+       
     )
 
 

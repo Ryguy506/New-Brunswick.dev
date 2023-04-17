@@ -29,14 +29,14 @@ fetch(`https://jsonplaceholder.typicode.com/users`)
 
 
 
-useEffect(() => {
-  console.log(commentData);
-}, [commentData]);
+// useEffect(() => {
+//   console.log(commentData);
+// }, [commentData]);
 
 
-useEffect(() => {
-  console.log(postData);
-}, [postData]);
+// useEffect(() => {
+//   console.log(postData);
+// }, [postData]);
 
 
 if (error) {
