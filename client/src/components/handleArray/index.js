@@ -32,10 +32,10 @@ const HandleArray = (props) => {
         <div>
         <div>
               {newValue ? (<div className="is-flex">
-                <input type="text" placeholder={props.placeholder} autoFocus className="input is-small" onChange={handleInput}/>  <button onClick={addArr}>+</button>
+                <input type="text" placeholder={props.placeholder} autoFocus className="input is-small" onChange={handleInput}/>  <button onClick={addArr} className="button is-info is-rounded">+</button>
             </div>) : <button className="button is-success" onClick={() => setNewValue(true)}>{props.Btn}</button>}
         </div>
-            {arrData.map((data, index) => (
+            {arrData && arrData.map((data, index) => (
                 <div key={index} onClick={() => deleteArr(index)} className="m-2 button is-info is-rounded">
                     <p>{data}</p>
                 </div>

@@ -12,25 +12,17 @@ const [postData, setPostData] = useState([]);
   // const [commentData, setCommentData] = useState([]);
   
 
-  const [helpData , setHelpData] = useState([]);
+  // const [helpData , setHelpData] = useState([]);
 
 
 useEffect(() => {
-  fetch('https://jsonplaceholder.typicode.com/posts')
+  fetch('http://localhost:3003/api/projects')
   .then(response => response.json())
   .then(data => setPostData(data))
-}, [])
-
-useEffect(() => {
-  fetch('https://jsonplaceholder.typicode.com/users')
-  .then(response => response.json())
-  .then(data => setHelpData(data))
+  .catch(error => console.log(error))
 }, [])
 
 
-useEffect(() => {
-  console.log(helpData);
-}, [helpData]);
 
 useEffect(() => {
   console.log(postData);
@@ -55,8 +47,8 @@ return (
   <div className="column is-10" id='right'>
  <div className="columns is-multiline" id='container'>
     {postData.map(data => ( 
-      <div className='column is-12' key={data.id}>
-    <Link to={`/post/${data.id}`}>
+      <div className='column is-12' key={data._id}>
+    <Link to={`/post/${data._id}`}>
     <SmallPost postData={data}/>
     </Link>
     </div>

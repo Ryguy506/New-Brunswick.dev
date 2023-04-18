@@ -4,17 +4,22 @@ const userSchema = new Schema(
      {
           oauthId: {
                type: String,
-  
+               required: true,
                max_length: 50,
           },
           name: {
                type: String,
-
+               required: true,
                max_length: 50,
           },
           bio: {
                type: String,
                max_length: 250,
+          },
+          image: {
+               type: String,
+               max_length: 250,
+               nullable: true,
           },
           skills: {
                type: [String],
@@ -36,7 +41,12 @@ const userSchema = new Schema(
           tagsFollowed: {
                type: [String],
           },
-          projects: [projectSchema.schema],
+          Projects: [
+               {
+                    type: Schema.Types.ObjectId,
+                    ref: 'Project'
+               }
+          ],
      },
      {
           toJSON: {

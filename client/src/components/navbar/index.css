@@ -12,9 +12,9 @@ display: flex;
 align-items: center;
 }
 
-#rightNav{
-display: flex;
-align-items: center;
+#rightNav div{
+    display: flex;
+    align-items: center;
 }
 
 #nav{

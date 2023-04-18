@@ -7,11 +7,14 @@ import "./index.css"
 
 const MyProfile = ({ profileData }) => {
 
+
+
 const [profile, setProfile] = useState({
-    name:  '' ,   
-    company: '',
+    name:  '',   
     email: '',
     website: '',
+    image: '',
+    bio : '',
     skills: []
 })
 
@@ -19,11 +22,12 @@ const [hasChanged, setHasChanged] = useState(false)
 
 useEffect(() => {
     setProfile({
-        name: profileData?.name,
-        company: profileData?.company?.name,
-        email: profileData?.email,
-        website: profileData?.website,
-        skills: []
+        name: profileData.name,
+        email: profileData.email,
+        website: profileData.website,
+        image: profileData.image,
+        skills: profileData.skills,
+        bio: profileData.bio
     })
 }, [profileData])  
 
@@ -58,7 +62,7 @@ return (
     <EditableText text={profile.name} updateParentState={handleState} fieldName="name"/>
         </div>
         <div className="column is-12 is-flex is-justify-content-center inputfield">
-            <EditableText text={profile.company} updateParentState={handleState} fieldName="company" />
+        <EditableText text={profile.bio} updateParentState={handleState} fieldName="bio"/>
         </div>
         
   </div>
@@ -69,7 +73,7 @@ return (
   <div className="columns is-multiline">
     <div className="column is-12 is-flex is-justify-content-center">
       
-     <img src="https://www.pngkey.com/png/full/73-730477_first-name-profile-image-placeholder-png.png" alt="..."  width='150px' height="150px"/> 
+     <img src={profile.image} alt="..."  width='150px' height="150px"/> 
 
   </div>
   <div className="column is-12 is-flex is-justify-content-center inputfield">

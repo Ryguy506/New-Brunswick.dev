@@ -8,7 +8,7 @@ import Error404 from './pages/404';
 import EditPost from './pages/editPostPage'; 
 import NewPost from './pages/newPost';
 import UserProfilePage from './pages/userProfilePage';
-import Login from './pages/login';
+import LoginPage from './pages/loginPage';
 
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 
@@ -53,9 +53,8 @@ useEffect(() => {
 <UserContext.Provider value={userData}>
   <Router>
     <StartTop/>
-<div className="">
+
   <Nav/>
-</div>
       <Routes>
         <Route 
           path="/" 
@@ -71,7 +70,7 @@ useEffect(() => {
       <Route path='/profile/:id' element={<UserProfilePage/>}/>
       <Route path='/new' element={<NewPost/>}/>
       {/* <Route path='/welcome' element={<OnBoarding/>}/> */}
-      <Route path='/login' element={<Login/>}/>
+      <Route path='/login' element={<LoginPage/>}/>
         <Route path='*' exact={true} element={<Error404/>} />
       </Routes>
 

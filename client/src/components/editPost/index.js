@@ -1,11 +1,17 @@
 
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect} from 'react';
 import EditableText from '../editableText';
 import HandleArray from '../handleArray';
 import './index.css';
 import Markdown from '../markdown';
 import { GoCheck } from 'react-icons/go';
+
+
 const EditPost = ({ postData }) => {
+
+
+
+
 
     const [post, setPost] = useState({
         title: '',
@@ -20,12 +26,15 @@ const EditPost = ({ postData }) => {
         setPost(
             {
                 title: postData.title,
-                body: postData.body,
+                body: postData.description,
                 tags : ['tag1', 'tag2' , 'tag3'],
                 collaborators : ['collab1', 'collab2', 'collab3']
             }
         );
     }, [postData]);
+
+
+
 
 
     // useEffect(() => {
@@ -57,7 +66,7 @@ const EditPost = ({ postData }) => {
         <div id='top'>
             <img src="https://www.pngkey.com/png/full/73-730477_first-name-profile-image-placeholder-png.png" alt="Placeholder image"/>
             <div id='info'>
-                <p className='is-size-4 has-text-weight-bold'>username</p>
+                <p className='is-size-4 has-text-weight-bold'></p>
         
                 <p className='is-size-6'>Posted on april 7</p>
             </div>
