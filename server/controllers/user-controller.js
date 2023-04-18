@@ -1,4 +1,4 @@
-const { User, Thought } = require('../models');
+const { User } = require('../models');
 
 const userController = {
   // /api/users
@@ -41,6 +41,7 @@ const userController = {
 
   // creates a new user in the database using the provided request body and returns the new user as a JSON response.
   createUser({ body }, res) {
+    console.log(body)
     User.create(body)
       .then(dbUserData => res.json(dbUserData))
       .catch(err => res.json(err));

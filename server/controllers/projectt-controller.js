@@ -136,4 +136,4 @@ const ProjectController = {
 
 };
 
-module.exports = projectController; // The line is exporting the ProjectController object as a module 
+module.exports = ProjectController; // The line is exporting the ProjectController object as a module 

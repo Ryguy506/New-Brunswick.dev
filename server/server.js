@@ -8,7 +8,10 @@ const cors = require('cors');
 const authRoute = require('./routes/auth');
 const URL = 'mongodb+srv://valeriikryshtal:Password123@developersnb.xzdm7zp.mongodb.net/developersNB?retryWrites=true&w=majority';
 const path = require('path');
+const routes = require("./routes")
 const app = express()
+app.use(express.urlencoded({ extended: true }));
+app.use(express.json());
 
 let db;
 
@@ -48,3 +51,4 @@ app.use(cors({
      }));
      
 app.use('/auth', authRoute);
+app.use("/" ,routes)
