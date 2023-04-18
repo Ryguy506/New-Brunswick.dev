@@ -19,13 +19,13 @@ const userController = {
   getUserById({ params }, res) {
     User.findOne({ _id: params.id })
       .populate({
-        path: 'projects',
+        path: 'Projects',
         select: '-__v'
       })
-      .populate({
-        path: 'friends',
-        select: '-__v'
-      })
+      // .populate({
+      //   path: 'friends',
+      //   select: '-__v'
+      // })
       .then(dbUserData => {
         if (!dbUserData) {
           res.status(404).json({ message: 'No User found with this id!' });

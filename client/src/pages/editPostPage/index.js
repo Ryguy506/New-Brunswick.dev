@@ -11,12 +11,15 @@ const EditPostPage = () => {
     const [postData, setPostData] = useState({});
 
     useEffect(() => {
-        fetch(`https://jsonplaceholder.typicode.com/posts/${id}`)
+        
+         fetch(`http://localhost:3003/api/projects/${id}`)
         .then(response => response.json())
         .then(data => setPostData(data))
-        }, [])
+        .catch(error => console.log(error))
+        
+      }, [])
 
- 
+    
 
 
 

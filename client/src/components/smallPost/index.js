@@ -1,12 +1,23 @@
 
 import "./index.css"
-
+import { useEffect, useState } from "react";
 
 
 const Post = ({postData}) => {
 
+  const [user, setUserData] = useState({});
 
-  const {userId , id , title , body} = postData;
+useEffect(() => {
+  if (postData.originalPoster ) {
+    
+  
+  fetch(`http://localhost:3003/api/users/${postData.originalPoster}`)
+  .then(response => response.json())
+  .then(data => setUserData(data))
+  .catch(error => console.log(error))
+  }
+}, [])
+ 
 
 
   return (
@@ -16,15 +27,14 @@ const Post = ({postData}) => {
 
     <div className="card" id="smallpost">
       <div id="posttop">
-        <img src="https://www.pngkey.com/png/full/73-730477_first-name-profile-image-placeholder-png.png"/>
+        <img src={user.image}/>
     <div className="ml-3">
-    <p className="has-text-white has-text-weight-bold">Username</p>
-    <time className="has-text-white">{id}</time>
+    <p className="has-text-white has-text-weight-bold">{user.name}</p>
+    <time className="has-text-white">{postData.date}</time>
     </div>
       </div>
     <div id="postbottom">
-    <h1 className="title is-4 has-text-weight-bold has-text-white">{title}</h1>
-    <p className="subtitle is-6 has-text-white">{body}</p>
+    <h1 className="title is-4 has-text-weight-bold has-text-white">{postData.title}</h1>
     </div>
     </div>
 

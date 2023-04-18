@@ -2,7 +2,8 @@ const express = require('express')
 const mongoose = require('mongoose')
 const PORT = process.env.PORT || 3003;
 const cookieSession = require('cookie-session');
-const passportSetup = require('./passport.js');
+// const session = require('express-session');
+require('./passport.js');
 const passport = require('passport');
 const cors = require('cors');
 const authRoute = require('./routes/auth');
@@ -39,6 +40,7 @@ app.use(cookieSession(
      maxAge: 24 * 60 * 60 * 1000 // 24 hours
      }
 ));
+
 
 
 app.use(passport.initialize());

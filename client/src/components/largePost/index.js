@@ -47,7 +47,6 @@ return (
     </div>
   ))
 ) : <p className='mt-5'>No comments</p>}
-{/* need to fix */}
 
 </div>
         </div>

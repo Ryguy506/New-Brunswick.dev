@@ -1,5 +1,5 @@
 const { Schema, model } = require("mongoose");
-// const User = require('./User');
+const User = require('./User');
 const reactionSchema = new Schema({
      reactionId: {
           type: Schema.Types.ObjectId,
@@ -56,15 +56,7 @@ const projectSchema = new Schema({
           ],
           default: []
      },
-     reactions: {
-          type: [
-               {
-               type: Schema.Types.ObjectId,
-               ref: "Reaction",
-               },
-          ],
-          default: [],
-     },
+     reactions: [reactionSchema],
      tags: {
           type: [String],
           default: [],
@@ -72,3 +64,13 @@ const projectSchema = new Schema({
 });
 const Project = model("Project", projectSchema);
 module.exports = Project;
+
+     // reactions: {
+     //      type: [
+     //           {
+     //           type: Schema.Types.ObjectId,
+     //           ref: "Reaction",
+     //           },
+     //      ],
+     //      default: [],
+     // },

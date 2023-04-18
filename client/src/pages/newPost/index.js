@@ -1,12 +1,13 @@
-import { useState, useEffect } from "react";
+import { useState, useEffect, useContext } from "react";
 import "./index.css"
 import {GoCheck} from "react-icons/go"
 import HandleArray from "../../components/handleArray";
 import Markdown from "../../components/markdown";
-
+import { UserContext } from '../../App';
 
 const NewPost = () => {
  
+    const userData = useContext(UserContext);
     
  
         const [inputValue, setInputValue] = useState({
