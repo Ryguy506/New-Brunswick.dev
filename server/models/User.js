@@ -4,12 +4,12 @@ const userSchema = new Schema(
      {
           oauthId: {
                type: String,
-               required: true,
+  
                max_length: 50,
           },
           name: {
                type: String,
-               required: true,
+
                max_length: 50,
           },
           bio: {
@@ -36,7 +36,7 @@ const userSchema = new Schema(
           tagsFollowed: {
                type: [String],
           },
-          projects: [projectSchema],
+          projects: [projectSchema.schema],
      },
      {
           toJSON: {

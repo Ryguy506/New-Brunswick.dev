@@ -1,6 +1,6 @@
 const { Schema, model } = require("mongoose");
 // const User = require('./User');
-const reactionSchema = new mongoose.Schema({
+const reactionSchema = new Schema({
      reactionId: {
           type: Schema.Types.ObjectId,
           default: () => new Types.ObjectId(),
@@ -70,5 +70,5 @@ const projectSchema = new Schema({
           default: [],
      },
 });
-const Project = mongoose.model("Project", projectSchema);
+const Project = model("Project", projectSchema);
 module.exports = Project;

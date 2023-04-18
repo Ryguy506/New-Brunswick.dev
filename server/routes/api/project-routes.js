@@ -9,7 +9,7 @@ const {
   deleteProject,
   createReaction,
   deleteReaction
-} = require('../../controllers/project-controller');
+} = require('../../controllers/projectt-controller');
 
 /*  sets up the route for getting all thoughts and creating a new thought. 
 This route is set up using the .route() method of the router object and chaining the .get() and .post() methods. */
