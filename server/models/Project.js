@@ -7,12 +7,12 @@ const reactionSchema = new Schema({
      },
      reactionBody: {
           type: String,
-          required: true,
+
           maxLength: 280
      },
      user: {
           type: String,
-          required: true
+
      },
      createdAt: {
           type: Date,
