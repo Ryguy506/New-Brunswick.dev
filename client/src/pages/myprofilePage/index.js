@@ -9,10 +9,6 @@ const MyProfilePage = () => {
     const [profileData, setProfileData] = useState({});
 
 
-useEffect(() => {
-    console.log(profileData.Projects);
-}, [profileData]);
-
 
 
 

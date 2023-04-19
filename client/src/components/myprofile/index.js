@@ -10,8 +10,7 @@ const MyProfile = ({ profileData }) => {
 
 
 const [profile, setProfile] = useState({
-    name:  '',   
-    email: '',
+    name:   '',   
     website: '',
     image: '',
     bio : '',
@@ -23,7 +22,6 @@ const [hasChanged, setHasChanged] = useState(false)
 useEffect(() => {
     setProfile({
         name: profileData.name,
-        email: profileData.email,
         website: profileData.website,
         image: profileData.image,
         skills: profileData.skills,
@@ -32,23 +30,38 @@ useEffect(() => {
 }, [profileData])  
 
 
-useEffect(() => {
-    console.log(profile);
-}, [profile])
-
-
 function handleState(fieldName, value) {
-  setProfile({
-    ...profile,
-    [fieldName]: value
-  });
-  setHasChanged(true)
-}
+    setProfile({
+      ...profile,
+      [fieldName]: value
+    });
+    setHasChanged(true)
+  }
+
+
+
+
+
+
+
+
 
 function handleSave() {
   // save to database
+  fetch(`http://localhost:3003/api/users/${profileData.id}`, {
+    method: 'PUT',
+    headers: {
+      'Content-Type': 'application/json'
+    },
+    body: JSON.stringify({
+      name: profile.name,
+      website: profile.website,
+      skills: profile.skills,
+      bio: profile.bio
+    })
+  })
   alert("Profile updated!")
-  setHasChanged(false)
+  window.location.reload()
 }
 
 
@@ -62,7 +75,8 @@ return (
     <EditableText text={profile.name} updateParentState={handleState} fieldName="name"/>
         </div>
         <div className="column is-12 is-flex is-justify-content-center inputfield">
-        <EditableText text={profile.bio} updateParentState={handleState} fieldName="bio"/>
+          social media
+        <EditableText text={profile.website} updateParentState={handleState} fieldName="website"/>
         </div>
         
   </div>
@@ -81,15 +95,13 @@ return (
         </div>
   </div>
   </div>
-  <div className="column is-5 is-flex is-justify-content-center ">
+  <div className="column is-5 is-flex is-justify-content-center">
   <div className="columns  is-multiline is-align-items-center">
-    <div className="column is-12 is-flex is-justify-content-center inputfield">
-    <EditableText text={profile.email} updateParentState={handleState} fieldName="email"/>
+    <div className="column is-12 is-flex is-justify-content-center" id="bio">
+    <p className="">bio</p>
+    <EditableText text={profile.bio} updateParentState={handleState} fieldName="bio" htmlEl="textarea"/>
         </div>
-        <div className="column is-12 is-flex is-justify-content-center inputfield">
-        <EditableText text={profile.website} updateParentState={handleState} fieldName="website"/>
-
-        </div>
+      
   </div>
     </div>
     </div>

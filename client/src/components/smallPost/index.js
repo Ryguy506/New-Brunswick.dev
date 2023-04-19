@@ -9,8 +9,6 @@ const Post = ({postData}) => {
 
 useEffect(() => {
   if (postData.originalPoster ) {
-    
-  
   fetch(`http://localhost:3003/api/users/${postData.originalPoster}`)
   .then(response => response.json())
   .then(data => setUserData(data))
@@ -38,7 +36,7 @@ useEffect(() => {
     {postData.tags && postData.tags.map((tag, index) => (
       <span className="tag is-primary is-light mr-2" key={index}>{tag}</span>
     ))}
-
+    <div className="has-text-white">{`${postData.reactions.length} Comments`}</div>
     </div>
     </div>
 
