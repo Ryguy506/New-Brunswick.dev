@@ -35,6 +35,10 @@ useEffect(() => {
       </div>
     <div id="postbottom">
     <h1 className="title is-4 has-text-weight-bold has-text-white">{postData.title}</h1>
+    {postData.tags && postData.tags.map((tag, index) => (
+      <span className="tag is-primary is-light mr-2" key={index}>{tag}</span>
+    ))}
+
     </div>
     </div>
 

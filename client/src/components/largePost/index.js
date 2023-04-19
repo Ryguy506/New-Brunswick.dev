@@ -4,30 +4,48 @@ import Comment from '../comment';
 import "./index.css"
 import { Link } from 'react-router-dom';
 import Markdown from '../markdown';
-const LargePost = ({postData , commentData}) => {
+import React, { useState, useEffect } from 'react';
+const LargePost = ({postData}) => {
 
-    const {userId , title , body , id} = postData;
+  const [user , setUser] = useState({});
 
+  useEffect(() => {
+    
+    if (postData.originalPoster) {
+    fetch(`http://localhost:3003/api/users/${postData.originalPoster}`)
+    .then(response => response.json())
+    .then(data => setUser(data))
+    .catch(error => console.log(error))
+    }
+    
+  }, [postData])
+
+
+  useEffect(() => {
     console.log(postData);
- 
+  }, [postData]);
+
+  
+
+
 return (
     <div className='container' id=''>
 <div id='top'>
-  <Link to={`/profile/${id}`}>
-    <img src="https://www.pngkey.com/png/full/73-730477_first-name-profile-image-placeholder-png.png" alt="Placeholder image"/>
+  <Link to={`/profile/${user.id}`}>
+    <img src={user.image} alt="Placeholder image"/>
   </Link>
     <div id='info'>
-        <p className='is-size-4 has-text-weight-bold'>username</p>
+        <p className='is-size-4 has-text-weight-bold'>{user.name}</p>
 
-        <p className='is-size-6'>Posted on april 7</p>
+        <p className='is-size-6'>{postData.date}</p>
     </div>
 </div>
 
 <div className="" id='bottom'>
-<p className='is-size-2 has-text-white has-text-weight-bold'>{title}</p>
+<p className='is-size-2 has-text-white has-text-weight-bold'>{postData.title}</p>
 <hr className='p-0 m-1'/>
 <div className='box p-6'>
-<Markdown markdown={body}/>
+<Markdown markdown={postData.description}/>
 </div>
 </div>
 
@@ -40,8 +58,8 @@ return (
 
 
 <div className='columns is-multiline is-justify-content-center mt-5' >
-{commentData.length > 0 ? (
-  commentData.map((comment) => (
+{postData.reactions ? (
+ postData.reactions.map((comment) => (
     <div className='column is-10' key={comment.id}>
       <Comment commentData={comment}/>
     </div>

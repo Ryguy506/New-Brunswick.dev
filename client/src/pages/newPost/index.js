@@ -33,6 +33,24 @@ const NewPost = () => {
     
         const handleSubmit = () => {
             // save to database
+            fetch('http://localhost:3003/api/projects', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json',
+
+                },
+                body: JSON.stringify({
+                    title: inputValue.title,
+                    description: inputValue.body,
+                    tags: inputValue.tags,
+                    originalPoster: userData.id,
+                    userId: userData.id
+
+
+
+                })
+            })  
+
             alert("Post created!")
             document.location.reload();
         };

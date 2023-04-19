@@ -7,7 +7,7 @@ const Comment = ({commentData}) => {
         <div id="commentContainer" className="columns m-3">
             <div id="commentUser" className="column is-2">
                 <img src="https://www.pngkey.com/png/full/73-730477_first-name-profile-image-placeholder-png.png"/>
-                <p>{commentData.username}</p>
+                <p>{commentData.user}</p>
 
             </div>
 
