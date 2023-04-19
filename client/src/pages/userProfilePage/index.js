@@ -19,17 +19,14 @@
         const { id } = useParams();
 
         useEffect(() => {
-            fetch(`https://jsonplaceholder.typicode.com/users/${id}`)
-            .then(response => response.json())
-            .then(data => setProfileData(data))
-            .catch(error => setError(error))
-          }, [id])
+            fetch(`http://localhost:3003/api/users/${id}`)
+                .then(response => response.json())
+                .then(data => setProfileData(data))
+                .catch(error => setError(error))
+        }, [id])
 
-          useEffect(() => {
-            fetch('https://jsonplaceholder.typicode.com/posts')
-            .then(response => response.json())
-            .then(data => setPostData(data))
-          }, [])
+
+  
 
           if (error) {
             return <Navigate to="/404" />;

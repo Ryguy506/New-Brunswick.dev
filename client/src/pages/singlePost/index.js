@@ -6,37 +6,23 @@ function SinglePost() {
     
 
 const [postData, setPostData] = useState({});
-  const [commentData, setCommentData] = useState([]);
   const [error, setError] = useState(null);
 
   const { id } = useParams();
 
 
- useEffect( () =>{
-fetch(`https://jsonplaceholder.typicode.com/posts/${id}`)
-.then(response => response.json())
-.then(data => setPostData(data))
-.catch(error => setError(error))
-}, [id]);
-
-
-useEffect( () =>{
-fetch(`https://jsonplaceholder.typicode.com/users`)
-.then(response => response.json())
-.then(data => setCommentData(data))
-}, []);
+useEffect(() => {
+  fetch(`http://localhost:3003/api/projects/${id}`)
+  .then(response => response.json())
+  .then(data => setPostData(data))
+  .catch(error => setError(error))
+}, [])
 
 
 
 
-// useEffect(() => {
-//   console.log(commentData);
-// }, [commentData]);
 
 
-// useEffect(() => {
-//   console.log(postData);
-// }, [postData]);
 
 
 if (error) {
@@ -46,7 +32,7 @@ if (error) {
 
 return (
   <div id='parent'>
-    <LargePost postData={postData} commentData={commentData}/>
+    <LargePost postData={postData}/>
   </div>
  
 );

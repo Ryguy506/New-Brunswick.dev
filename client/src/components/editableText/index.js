@@ -5,26 +5,29 @@ import "./index.css";
 function EditableText(props) {
   const [editing, setEditing] = useState(false);
   // const [text, setText] = useState();
-  const [input, setInput] = useState();
 
 
-const handleSave = () => {
-    props.updateParentState(props.fieldName, input);
-    setEditing(false);
-  };
+  // // useEffect(() => {
+  // //   setText(props.text);
+
+  // // }, [props.text]);
+
+
+
 
 
 
   const handleChange = (event) => {
-    setInput(event.target.value);
+    // setText(event.target.value);
+    props.updateParentState(props.fieldName, event.target.value);
   };
 
-  return editing || !props.text ?  (
+  return editing?  (
     props.htmlEl === 'textarea' ?
-    <textarea className="textarea" value={props.text} autoFocus  onChange={handleChange} onBlur={handleSave} />
+    <textarea className="textarea" value={props.text} autoFocus  onChange={handleChange} onBlur={() => setEditing(false)} />
     : (
       <div>
-    <input type="text" className="input" autoFocus value={props.text} onChange={handleChange} onBlur={handleSave} />
+    <input type="text" className="input" autoFocus value={props.text} onChange={handleChange} onBlur={() => setEditing(false)} />
     </div>
     )
   ) : (
