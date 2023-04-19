@@ -13,11 +13,19 @@ import LoginPage from './pages/loginPage';
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 
 export const UserContext = createContext();
+export const NewsContext = createContext();
+export const PageContext = createContext();
 
 function App() {
 
     const [userData, setUserData] = useState(null);
-
+    const [newsData, setNewsData] = useState([]);
+    // const [loading, setLoading] = useState(true);
+    const [pageNumber, setPageNumber] = useState(1);
+    useEffect(() => {
+      console.log(pageNumber);
+    }, [pageNumber])
+    
   useEffect(() => {
    const getUser = async () => {
     fetch('http://localhost:3003/auth/login/success', {
@@ -43,23 +51,39 @@ function App() {
 }, [])
 
 
+
 useEffect(() => {
-  console.log(userData);
-}, [userData]);
+  const options = {
+    method: 'GET',
+    headers: {
+      'X-RapidAPI-Key': '30e2c5b198msh98fd7763e5904f2p163deajsn67969615a5a2',
+      'X-RapidAPI-Host': 'contextualwebsearch-websearch-v1.p.rapidapi.com'
+    }
+  };
+  
+  fetch(`https://contextualwebsearch-websearch-v1.p.rapidapi.com/api/search/NewsSearchAPI?q=javascript%20react&pageNumber=${pageNumber}&pageSize=10&autoCorrect=true&withThumbnails=true&fromPublishedDate=null&toPublishedDate=null`, options)
+    .then(response => response.json())
+    .then(response => setNewsData(response.value))
+    .catch(err => console.error(err));
+}, [pageNumber])
 
 
   return (
 
 <UserContext.Provider value={userData}>
+<NewsContext.Provider value={newsData}>
+  <PageContext.Provider value={{pageNumber , setPageNumber}}>
   <Router>
     <StartTop/>
 
   <Nav/>
+  
       <Routes>
         <Route 
           path="/" 
           element={<Home/>}
         />
+
 
         <Route path='/post/:id'
         element={<SinglePost/>}/>
@@ -77,6 +101,8 @@ useEffect(() => {
 
  
 </Router>
+</PageContext.Provider>
+</NewsContext.Provider>
 </UserContext.Provider>
   )
 }

@@ -18,8 +18,6 @@ const userSchema = new Schema(
           },
           image: {
                type: String,
-               max_length: 250,
-               nullable: true,
           },
           skills: {
                type: [String],

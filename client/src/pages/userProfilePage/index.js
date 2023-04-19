@@ -12,7 +12,6 @@
 
         const [profileData, setProfileData] = useState({});
 
-        const [postData, setPostData] = useState([]);
 
         const [error, setError] = useState(null);
 
@@ -24,8 +23,6 @@
                 .then(data => setProfileData(data))
                 .catch(error => setError(error))
         }, [id])
-
-
   
 
           if (error) {
@@ -36,8 +33,8 @@
             <div id='parent'>
             <UserProfile profileData={profileData} />
             <div className="columns is-multiline">
-            {postData.map(data => (
-            <div className="column is-12" key={data.id}>
+            {profileData.Projects  && profileData.Projects.map((data, index) => (
+            <div className="column is-12" key={index}>
                 <Link to={`/post/${data.id}`}>
             <SmallPost postData={data} />
             </Link>
