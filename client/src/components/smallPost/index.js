@@ -32,7 +32,7 @@ const Post = ({ postData }) => {
       .catch((error) => console.log(error));
 			document.location.reload ();
   };
-	console.log(postData.id)
+
 
   useEffect(() => {
     const isMyProfilePage = window.location.pathname === "/myprofile";

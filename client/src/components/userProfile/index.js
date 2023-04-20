@@ -2,7 +2,7 @@
 import {useState , useEffect} from 'react';
 import { useParams } from 'react-router-dom';
 import './index.css';
-
+import Icons from '../icons';
 const UserProfile = ({profileData}) => {
 
 
@@ -13,14 +13,16 @@ const UserProfile = ({profileData}) => {
         <div className='columns is-multiline'>
           <div className='column is-5 is-flex is-justify-content-center'>
           <div className='columns is-multiline is-align-items-center'>
-          <div className='column is-12 is-flex is-justify-content-center text'>
-                        <p>{profileData.name}</p>
-                    </div>
                     <div className='column is-12 is-flex is-justify-content-center text'>
-                        <p>{profileData.name}</p>
-                    </div>
-                    <div className='column is-12 is-flex is-justify-content-center text'>
-                        <a>{profileData.website}</a>
+                    {profileData.website  &&  profileData.website.map((link , index) => (
+             
+                  <a href={link} key={index} className='m-2'>
+                    <Icons link={link} />
+                </a>
+              
+                
+            )
+            )}
                     </div>
             </div>
           </div>

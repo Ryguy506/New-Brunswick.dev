@@ -28,9 +28,7 @@ const userSchema = new Schema(
                nullable: true,
           },
           website: {
-               type: String,
-               max_length: 150,
-               nullable: true,
+               type: [String],
           },
           usersFollowed: {
                type: Schema.Types.ObjectId,
