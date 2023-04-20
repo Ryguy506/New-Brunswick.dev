@@ -1,4 +1,3 @@
-
 import SmallPost from '../../components/smallPost';
 import React, { useState, useEffect , useContext} from 'react';
 import "./index.css"

@@ -1,9 +1,6 @@
 
 
 
-/* #left{
-    height: 500px;
-} */
 #parent{
     margin-top: 80px;
 }
@@ -19,12 +16,7 @@
 }
 
 
-/* #right .box {
- height: 700px;
-} */
-
 .test{
     height: 100%;
     position: relative;
 }
-
