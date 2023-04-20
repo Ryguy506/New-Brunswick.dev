@@ -8,23 +8,22 @@ import Error404 from './pages/404';
 import EditPost from './pages/editPostPage'; 
 import NewPost from './pages/newPost';
 import UserProfilePage from './pages/userProfilePage';
-import LoginPage from './pages/loginPage';
-
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 
 export const UserContext = createContext();
 export const NewsContext = createContext();
 export const PageContext = createContext();
 
+
 function App() {
 
     const [userData, setUserData] = useState(null);
     const [newsData, setNewsData] = useState([]);
-    // const [loading, setLoading] = useState(true);
     const [pageNumber, setPageNumber] = useState(1);
-    useEffect(() => {
-      console.log(pageNumber);
-    }, [pageNumber])
+  
+    if (pageNumber < 1) {
+      setPageNumber(1);
+    }
     
   useEffect(() => {
    const getUser = async () => {
@@ -56,7 +55,7 @@ useEffect(() => {
   const options = {
     method: 'GET',
     headers: {
-      'X-RapidAPI-Key': '30e2c5b198msh98fd7763e5904f2p163deajsn67969615a5a2',
+      'X-RapidAPI-Key': '',
       'X-RapidAPI-Host': 'contextualwebsearch-websearch-v1.p.rapidapi.com'
     }
   };
@@ -73,11 +72,11 @@ useEffect(() => {
 <UserContext.Provider value={userData}>
 <NewsContext.Provider value={newsData}>
   <PageContext.Provider value={{pageNumber , setPageNumber}}>
+
   <Router>
     <StartTop/>
-
   <Nav/>
-  
+
       <Routes>
         <Route 
           path="/" 
@@ -94,7 +93,7 @@ useEffect(() => {
       <Route path='/profile/:id' element={<UserProfilePage/>}/>
       <Route path='/new' element={<NewPost/>}/>
       {/* <Route path='/welcome' element={<OnBoarding/>}/> */}
-      <Route path='/login' element={<LoginPage/>}/>
+      {/* <Route path='/login' element={<LoginPage/>}/> */}
         <Route path='*' exact={true} element={<Error404/>} />
       </Routes>
 

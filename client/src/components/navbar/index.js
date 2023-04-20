@@ -1,10 +1,11 @@
-
 import React , {useState , useEffect ,useContext  } from "react";
 import { Link , useLocation  } from "react-router-dom";
 import {AiOutlineSearch} from "react-icons/ai"
 import "./index.css"
 import { UserContext } from '../../App';
 import LoginBtn from "../loginBtn";
+import logo from '../../assets/Screenshot_2023-04-07_at_12.07.36_AM.png'
+
 
 const Nav = () => {
 
@@ -32,7 +33,7 @@ const handleLogout = () => {
         <nav className="navbar is-fixed-top" id="nav">
             <div id="leftNav">
             <Link to="/" className="mr-2">
-                <img id="logo" 
+                <img src={logo} 
                 className={activePath === "/" ? "navItemActive" : null }/>
             </Link> 
             {/* {activePath === "/" ? (<div className="field has-addons">

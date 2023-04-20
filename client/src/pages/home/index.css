@@ -1,14 +1,22 @@
 
 
 
-#left{
-    /* height: 500px; */
-}
 #parent{
     margin-top: 80px;
 }
-#wrapper{
-	background: url(../../img/background.jpg);
-		background-size:cover
+
+#right{
+    position: fixed;
+   right : 0;
+ 
+   right: 0;
+ 
+
+   height: 100%;
 }
 
+
+.test{
+    height: 100%;
+    position: relative;
+}

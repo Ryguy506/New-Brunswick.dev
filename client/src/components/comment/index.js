@@ -1,6 +1,7 @@
 import React from "react";
 import "./index.css"
 import { useEffect, useState } from "react";
+
 const Comment = ({commentData}) => {
 
     const [user , setUser] = useState({});

@@ -47,7 +47,6 @@ window.location.reload();
 
 
 
-
 return (
     <div className='container' id=''>
 <div id='top'>
@@ -69,11 +68,12 @@ return (
 </div>
 </div>
 
+ 
 
 
-<div id='inputContainer'>
+     <div id='inputContainer'>
     <textarea placeholder="Add a comment" className='textarea is-rounded' rows="3" id='commentInput'/>
-    <button className='button is-rounded is-primary' id='commentButton' onClick={addComment}>Post</button>
+    <button className='button is-rounded is-success' id='commentButton' onClick={addComment}>Post</button>
     </div>
 
 
