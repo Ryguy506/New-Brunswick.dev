@@ -2,9 +2,13 @@
 
 
 #left{
-    height: 500px;
+    /* height: 500px; */
 }
 #parent{
     margin-top: 80px;
+}
+#wrapper{
+	background: url(../../img/background.jpg);
+		background-size:cover
 }
 

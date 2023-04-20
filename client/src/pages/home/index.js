@@ -33,7 +33,8 @@ useEffect(() => {
 
 
 return (
-  <div className='columns mr-2 ml-2' id='parent'>
+	<div id="wrapper">
+		<div className='columns mr-2 ml-2' id='parent'>
   <div className="column is-8" id='left'>
     <div className="columns is-multiline">
     {postData.map(data => ( 
@@ -54,7 +55,7 @@ return (
     <button className='button is-primary is-fullwidth' onClick={handleClick}>Load More</button>
  <div className="columns is-multiline" id='container'>
     {newsData && newsData.map((data , index) => ( 
-      <div className='column is-12' key={index}>
+      <div className='column is-12 has-text-white' key={index}>
         
     <News newsData={data}/>
       </div>
@@ -64,6 +65,8 @@ return (
     </div>
   </div>
   </div>
+	</div>
+  
  
 );
 }
