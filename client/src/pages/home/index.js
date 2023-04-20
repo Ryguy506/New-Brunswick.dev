@@ -1,22 +1,14 @@
 
 import SmallPost from '../../components/smallPost';
-// import HelpNeeded from '../../components/helpneeded';
 import React, { useState, useEffect , useContext} from 'react';
 import "./index.css"
 import { Link } from 'react-router-dom';
-import { NewsContext } from '../../App';
-import { PageContext } from '../../App';
+import { NewsContext , PageContext } from '../../App';
 import News from '../../components/news';
 function Home() {
     
 const newsData = useContext(NewsContext);
 const {pageNumber , setPageNumber}  = useContext(PageContext);
-
-const handleClick = () => {
-  setPageNumber(pageNumber + 1);
-}
-
-
 const [postData, setPostData] = useState([]);
 
 
@@ -28,12 +20,25 @@ useEffect(() => {
 }, [])
 
 
+// function handleClick() {
+// setPageNumber(pageNumber + 1)
+// }
 
+const [newsIndex , setNewsIndex] = useState(0);
 
+useEffect(() => {
+   if (newsIndex < 0) {
+    setNewsIndex(newsData?.length - 1);
+  }
+}, [newsIndex, newsData?.length]);
+
+useEffect(() => {
+  setNewsIndex(0);
+}, [newsData]);
 
 
 return (
-  <div className='columns mr-2 ml-2' id='parent'>
+  <div className='columns mr-2 ml-2 test' id='parent'>
   <div className="column is-8" id='left'>
     <div className="columns is-multiline">
     {postData.map(data => ( 
@@ -50,22 +55,14 @@ return (
   </div>
 
 
-  <div className="column is-2" id='right'>
-    <button className='button is-primary is-fullwidth' onClick={handleClick}>Load More</button>
- <div className="columns is-multiline" id='container'>
-    {newsData && newsData.map((data , index) => ( 
-      <div className='column is-12' key={index}>
-        
-    <News newsData={data}/>
-      </div>
+  <div className="column is-4" id='right'>  
+  {newsData && (<News newsData={newsData[newsIndex]} changeIndex={setNewsIndex} index={newsIndex} nextPage={() => setPageNumber(pageNumber + 1)} length={newsData?.length}/>)}
 
-    )
-    )}
-    </div>
-  </div>
-  </div>
- 
-);
+</div>
+</div>
+
+)
 }
+
 
 export default Home;
