@@ -28,9 +28,9 @@ const MyProfilePage = () => {
         <div className="columns is-multiline">
         {profileData.Projects && profileData.Projects.map(data => (
             <div className="column is-12" key={data._id}>
-                <Link to={`/myprofile/edit/${data._id}`}>
+                {/* <Link to={`/myprofile/edit/${data._id}`}> */}
             <SmallPost postData={data} user={profileData} />
-            </Link>
+            {/* </Link> */}
             </div>
         ))}
         </div>
