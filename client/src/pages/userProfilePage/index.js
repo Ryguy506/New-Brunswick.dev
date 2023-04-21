@@ -20,7 +20,7 @@
 
         useEffect(() => {
        
-            fetch(`http://localhost:3003/api/users/${id}`)
+            fetch(`https://newbrunswick-dev.herokuapp.com/api/users/${id}`)
                 .then(response => response.json())
                 .then(data => setProfileData(data))
                 .catch(error => setError(error))

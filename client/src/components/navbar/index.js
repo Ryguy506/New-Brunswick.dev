@@ -22,7 +22,7 @@ useEffect(() => {
 const userData = useContext(UserContext);
 
 const handleLogout = () => {
-  window.open("http://localhost:3003/auth/logout", "_self");
+  window.open("https://newbrunswick-dev.herokuapp.com/auth/logout", "_self");
 };
 
 

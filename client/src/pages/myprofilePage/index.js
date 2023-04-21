@@ -15,7 +15,7 @@ const MyProfilePage = () => {
 
     useEffect(() => {
         if (userData) {
-         fetch(`http://localhost:3003/api/users/${userData.id}`)
+         fetch(`https://newbrunswick-dev.herokuapp.com/api/users/${userData.id}`)
         .then(response => response.json())
         .then(data => setProfileData(data))
         .catch(error => console.log(error))

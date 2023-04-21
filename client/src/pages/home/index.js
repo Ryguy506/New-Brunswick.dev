@@ -12,7 +12,7 @@ const [postData, setPostData] = useState([]);
 
 
 useEffect(() => {
-  fetch('http://localhost:3003/api/projects')
+  fetch('https://newbrunswick-dev.herokuapp.com/api/projects')
   .then(response => response.json())
   .then(data => setPostData(data))
   .catch(error => console.log(error))

@@ -8,7 +8,7 @@ const Post = ({ postData }) => {
 
   useEffect(() => {
     if (postData.originalPoster) {
-      fetch(`http://localhost:3003/api/users/${postData.originalPoster}`)
+      fetch(`https://newbrunswick-dev.herokuapp.com/api/users/${postData.originalPoster}`)
         .then((response) => response.json())
         .then((data) => setUserData(data))
         .catch((error) => console.log(error));
@@ -16,7 +16,7 @@ const Post = ({ postData }) => {
   }, []);
 
   const deletePost = () => {
-    fetch(`http://localhost:3003/api/projects/${postData._id}`, {
+    fetch(`https://newbrunswick-dev.herokuapp.com/api/projects/${postData._id}`, {
       method: "DELETE",
 			headers: {
 				'Content-Type': 'application/json',

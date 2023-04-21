@@ -6,7 +6,7 @@ const Comment = ({commentData}) => {
 
     const [user , setUser] = useState({});
     useEffect(() => {
-        fetch(`http://localhost:3003/api/users/${commentData.user}`)
+        fetch(`https://newbrunswick-dev.herokuapp.com/api/users/${commentData.user}`)
         .then(response => response.json())
         .then(data => setUser(data))
         .catch(error => console.log(error))

@@ -3,7 +3,7 @@
 
 const LoginBtn = () => {
     const google = () => {
-        window.open('http://localhost:3003/auth/google' , '_self')
+        window.open('https://newbrunswick-dev.herokuapp.com/auth/google' , '_self')
     }
     
     return (

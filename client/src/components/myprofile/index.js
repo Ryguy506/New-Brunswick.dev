@@ -48,7 +48,7 @@ function handleState(fieldName, value) {
 
 function handleSave() {
   // save to database
-  fetch(`http://localhost:3003/api/users/${profileData.id}`, {
+  fetch(`https://newbrunswick-dev.herokuapp.com/api/users/${profileData.id}`, {
     method: 'PUT',
     headers: {
       'Content-Type': 'application/json'

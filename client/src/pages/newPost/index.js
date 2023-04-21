@@ -27,7 +27,7 @@ const NewPost = () => {
     
         const handleSubmit = () => {
             // save to database
-            fetch('http://localhost:3003/api/projects', {
+            fetch('https://newbrunswick-dev.herokuapp.com/api/projects', {
                 method: 'POST',
                 headers: {
                     'Content-Type': 'application/json',
