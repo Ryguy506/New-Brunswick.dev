@@ -9,13 +9,13 @@ router.get(
     '/google/callback',
     passport.authenticate('google', {failureRedirect: '/login' }),
     (req, res) => {
-        res.redirect("http://localhost:3000/");
+        res.redirect("https://newbrunswick-dev.herokuapp.com/");
     }
 );
 
 router.get('/logout', (req, res) => {
     req.logout();
-    res.redirect("http://localhost:3000/");
+    res.redirect("https://newbrunswick-dev.herokuapp.com/");
 });
 
 router.get('/login/success', (req, res) => {
