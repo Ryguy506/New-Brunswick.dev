@@ -14,7 +14,7 @@ const LargePost = ({postData}) => {
   useEffect(() => {
     
     if (postData.originalPoster) {
-    fetch(`http://localhost:3003/api/users/${postData.originalPoster}`)
+    fetch(`https://newbrunswick-dev.herokuapp.com/api/users/${postData.originalPoster}`)
     .then(response => response.json())
     .then(data => setUser(data))
     .catch(error => console.log(error))
@@ -31,7 +31,7 @@ const LargePost = ({postData}) => {
 
   const addComment = () => {
     const comment = document.getElementById('commentInput').value;
-fetch(`http://localhost:3003/api/projects/${id}/reactions`, {
+fetch(`https://newbrunswick-dev.herokuapp.com/api/projects/${id}/reactions`, {
   method: 'POST',
   headers: {
     'Content-Type': 'application/json',
