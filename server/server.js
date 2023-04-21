@@ -13,6 +13,10 @@ const routes = require("./routes")
 const app = express()
 app.use(express.urlencoded({ extended: true }));
 app.use(express.json());
+// Serve up static assets
+if (process.env.NODE_ENV === 'production') {
+  app.use(express.static(path.join(__dirname, '../client/build')));
+}
 
 let db;
 
@@ -28,10 +32,7 @@ mongoose
 if (process.env.NODE_ENV === 'production') {
      app.use(express.static(path.join(__dirname, '../client')));
 }
-//Load the stage for our react app, since it is a single page
-app.get('/', (req, res) => {
-     res.sendFile(path.join(__dirname, '../client/public/index.html'));
-});
+
 
 app.use(cookieSession(
      {
@@ -40,6 +41,8 @@ app.use(cookieSession(
      maxAge: 24 * 60 * 60 * 1000 // 24 hours
      }
 ));
+
+
 
 
 
@@ -54,3 +57,8 @@ app.use(cors({
      
 app.use('/auth', authRoute);
 app.use("/" ,routes)
+
+//Load the stage for our react app, since it is a single page
+app.get('*', (req, res) => {
+	res.sendFile(path.join(__dirname, '../client/public/index.html'));
+});
