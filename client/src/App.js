@@ -27,7 +27,7 @@ function App() {
     
   useEffect(() => {
    const getUser = async () => {
-    fetch('http://localhost:3003/auth/login/success', {
+    fetch('https://newbrunswick-dev.herokuapp.com//auth/login/success', {
       method: 'GET',
       credentials: 'include',
       headers: { Accept: 'application/json', 'Content-Type': 'application/json', 'Access-Control-Allow-Credentials': true}
@@ -55,7 +55,7 @@ useEffect(() => {
   const options = {
     method: 'GET',
     headers: {
-      'X-RapidAPI-Key': '',
+      'X-RapidAPI-Key': '7663f6a4b9mshc5e75ba145bcf66p12d78bjsn71414e15d104',
       'X-RapidAPI-Host': 'contextualwebsearch-websearch-v1.p.rapidapi.com'
     }
   };
